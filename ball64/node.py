@@ -3,7 +3,7 @@
 import rospy 
 from std_msgs.msg import String
 
-text = rospy.get_param("/Talker/text")
+#text = rospy.get_param("/Talker/text")
 
 if __name__ == "__main__":
     pub = rospy.Publisher("chatter", String, queue_size=10)
@@ -11,8 +11,6 @@ if __name__ == "__main__":
     rate = rospy.Rate(0.5)
    
     while not rospy.is_shutdown():
-#    	pub.publish("Hello")
-        pub.publish(text)
-        rospy.loginfo("Node: " + str(text))
+        pub.publish("FW")
         rate.sleep()
 
